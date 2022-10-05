@@ -4,13 +4,13 @@ import java.util.*;
 import java.util.Arrays;
 
 public class Book {
-    String titlu;
+    String title;
     List<String> text=new ArrayList<String>();
     List<String> image=new ArrayList<String>();
     List<String> table=new ArrayList<String>();
 
-    public Book(String titlu) {
-        this.titlu = titlu;
+    public Book(String title) {
+        this.title = title;
     }
 
     public Book() {}
@@ -29,16 +29,17 @@ public class Book {
     }
 
     public void print(){
-        System.out.println(titlu);
-        System.out.println("----------------------");
-        for(String elem:text)
-            System.out.println(elem);
-        System.out.println("----------------------");
-        for(String elem:image)
-            System.out.println(elem);
-        System.out.println("----------------------");
-        for(String elem:table)
-            System.out.println(elem);
-        System.out.println("----------------------");
+        System.out.println("=======================");
+        System.out.println("     "+title);
+        System.out.println("=======================");
+        for(String listOfParagraphs:text)
+            System.out.println(listOfParagraphs);
+        System.out.println("-----------------------");
+        for(String listOfImages:image)
+            System.out.println(listOfImages);
+        System.out.println("-----------------------");
+        for(String listOfTables:table)
+            System.out.println(listOfTables);
+        System.out.println("-----------------------");
     }
 }
