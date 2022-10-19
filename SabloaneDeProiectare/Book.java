@@ -5,41 +5,33 @@ import java.util.Arrays;
 
 public class Book {
     String title;
-    List<String> text=new ArrayList<String>();
-    List<String> image=new ArrayList<String>();
-    List<String> table=new ArrayList<String>();
-
+    private List<Author> authors = new ArrayList<Author>();
+    private List<Chapter> chapters = new ArrayList<Chapter>();
     public Book(String title) {
         this.title = title;
     }
 
-    public Book() {}
-
-    public void createNewParagraph(String newParagraph){
-        text.add(newParagraph);
-
+    public void addAuthor(Author a){
+        authors.add(a);
     }
 
-    public void createNewImage(String newImage){
-        image.add(newImage);
+    public int createChapter(String nameChapter){
+        Chapter ch = new Chapter(nameChapter);
+        chapters.add(ch);
+        return chapters.indexOf(ch);
     }
 
-    public void createNewTable(String newTable){
-        table.add(newTable);
+    public Chapter getChapter(int indexChapter){
+        return chapters.get(indexChapter);
     }
 
     public void print(){
         System.out.println("=======================");
         System.out.println("     "+title);
         System.out.println("=======================");
-        for(String listOfParagraphs:text)
-            System.out.println(listOfParagraphs);
-        System.out.println("-----------------------");
-        for(String listOfImages:image)
-            System.out.println(listOfImages);
-        System.out.println("-----------------------");
-        for(String listOfTables:table)
-            System.out.println(listOfTables);
+        for(Author a :authors)
+            a.print();
         System.out.println("-----------------------");
     }
+
 }
