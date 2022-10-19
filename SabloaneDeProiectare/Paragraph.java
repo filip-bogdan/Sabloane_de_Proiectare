@@ -18,4 +18,20 @@ public class Paragraph implements Element{
     public void print(){
         System.out.println("Paragraph: " + text);
     }
+
+    @Override
+    public void add(Element el) {
+
+    }
+
+    @Override
+    public void remove(Element el) {
+
+    }
+
+    @Override
+    public int get(Element el) {
+        return 0;
+    }
+
 }

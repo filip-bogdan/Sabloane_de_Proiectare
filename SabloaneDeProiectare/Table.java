@@ -18,4 +18,21 @@ public class Table implements Element{
     public void print(){
         System.out.println("Table with title: " + title);
     }
+
+    @Override
+    public void add(Element el) {
+
+    }
+
+    @Override
+    public void remove(Element el) {
+
+    }
+
+    @Override
+    public int get(Element el) {
+        return 0;
+    }
+
+
 }

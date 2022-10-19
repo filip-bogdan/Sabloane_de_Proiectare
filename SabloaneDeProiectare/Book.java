@@ -3,12 +3,16 @@ package SabloaneDeProiectare;
 import java.util.*;
 import java.util.Arrays;
 
-public class Book {
-    String title;
+public class Book extends Section{
     private List<Author> authors = new ArrayList<Author>();
     private List<Chapter> chapters = new ArrayList<Chapter>();
     public Book(String title) {
+        super(title);
         this.title = title;
+    }
+
+    public void addContent(Element el){
+        elList.add(el);
     }
 
     public void addAuthor(Author a){
@@ -26,12 +30,14 @@ public class Book {
     }
 
     public void print(){
-        System.out.println("=======================");
-        System.out.println("     "+title);
-        System.out.println("=======================");
+        System.out.println("Book:"+title);
+        System.out.println();
+        System.out.println("Authors:");
         for(Author a :authors)
             a.print();
-        System.out.println("-----------------------");
+        System.out.println();
+        for(Element el:elList)
+            el.print();
     }
 
 }
