@@ -18,32 +18,25 @@ public class SubChapter {
         this.name = name;
     }
 
-    List<Paragraph> texts=new ArrayList<Paragraph>();
-    List<Image> images=new ArrayList<Image>();
-    List<Table> tables=new ArrayList<Table>();
-
+    List<Element> elList = new ArrayList<Element>();
 
     public void createNewParagraph(String newParagraph){
         Paragraph paragraph = new Paragraph(newParagraph);
-        texts.add(paragraph);
+        elList.add(paragraph);
     }
 
     public void createNewImage(String newImage){
         Image image = new Image(newImage);
-        images.add(image);
+        elList.add(image);
     }
 
     public void createNewTable(String newTable){
         Table table = new Table(newTable);
-        tables.add(table);
+        elList.add(table);
     }
     public void print(){
         System.out.println("Subchapter: " + name);
-        for(Paragraph p:texts)
-            p.print();
-        for(Image i:images)
-            i.print();
-        for(Table t:tables)
-            t.print();
+        for(Element e:elList)
+            e.print();
     }
 }
