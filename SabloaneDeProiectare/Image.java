@@ -1,22 +1,34 @@
 package SabloaneDeProiectare;
 
-public class Image implements Element{
-    private String imageName;
+import java.util.concurrent.TimeUnit;
 
-    public Image(String imageName) {
-        this.imageName = imageName;
+public class Image implements Element {
+    private String url;
+    private String ImageContent;
+
+    public Image(String url) {
+        this.url = url;
+        try {
+            TimeUnit.SECONDS.sleep(5);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     public String getImageName() {
-        return imageName;
+        return url;
     }
 
-    public void setImageName(String imageName) {
-        this.imageName = imageName;
+    public void setImageName(String url) {
+        this.url = url;
     }
 
     public void print(){
-        System.out.println("Image with name: " + imageName);
+        System.out.println("Image with name: " + url);
+    }
+
+    public void content(){
+
     }
 
     @Override
