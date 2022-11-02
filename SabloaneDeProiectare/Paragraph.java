@@ -2,21 +2,23 @@ package SabloaneDeProiectare;
 
 public class Paragraph implements Element{
     private String text;
+    private AlignStrategy alignStrategy;
 
     public Paragraph(String text) {
         this.text = text;
+        this.alignStrategy = null;
     }
 
     public String getText() {
         return text;
     }
 
-    public void setText(String text) {
-        this.text = text;
-    }
-
     public void print(){
-        System.out.println("Paragraph: " + text);
+        if(alignStrategy == null)
+            System.out.println("Paragraph: " + text);
+        else
+            System.out.println(alignStrategy);
+
     }
 
     @Override
@@ -34,4 +36,7 @@ public class Paragraph implements Element{
         return 0;
     }
 
+    public void setAlignStrategy(AlignStrategy alignStrategy) {
+        alignStrategy.render(new Paragraph(text));
+    }
 }
