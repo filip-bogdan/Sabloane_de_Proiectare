@@ -1,8 +1,9 @@
 package SabloaneDeProiectare.models;
 
 import java.util.*;
+import SabloaneDeProiectare.services.Visitor;
 
-public class Book extends Section {
+public class Book extends Section implements Element{
     private List<Author> authors = new ArrayList<Author>();
     private List<Chapter> chapters = new ArrayList<Chapter>();
     public Book(String title) {
@@ -37,6 +38,11 @@ public class Book extends Section {
         System.out.println();
         for(Element el:elList)
             el.print();
+    }
+
+    @Override
+    public void accept(Visitor v) {
+        super.accept(v);
     }
 
 }
