@@ -1,4 +1,4 @@
-package SabloaneDeProiectare;
+package SabloaneDeProiectare.models;
 
 import java.awt.*;
 

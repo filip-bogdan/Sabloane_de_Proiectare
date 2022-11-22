@@ -1,12 +1,16 @@
-package SabloaneDeProiectare;
+package SabloaneDeProiectare.models;
+
+import SabloaneDeProiectare.models.Element;
+import SabloaneDeProiectare.models.Image;
+import SabloaneDeProiectare.services.Visitor;
 
 import java.awt.*;
 
-public class ImageProxy implements Element{
+public class ImageProxy implements Element {
     private String url;
     private Dimension dim;
 
-    private Image realImage;
+    private SabloaneDeProiectare.models.Image realImage;
 
     public ImageProxy(String url) {
         this.url = url;
@@ -28,7 +32,7 @@ public class ImageProxy implements Element{
         this.dim = dim;
     }
 
-    public Image loadImage(){
+    public SabloaneDeProiectare.models.Image loadImage(){
         if(realImage == null){
             realImage = new Image(url);
         }
@@ -48,6 +52,11 @@ public class ImageProxy implements Element{
     @Override
     public void remove(Element el) {
 
+    }
+
+    @Override
+    public void accept(Visitor v) {
+        v.visitImageProxy(this);
     }
 
     @Override
