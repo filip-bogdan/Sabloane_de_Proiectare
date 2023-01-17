@@ -1,2 +1,3 @@
-# Sabloane_de_Proiectare
-acesta este repo-ul pentru sabloane de proiectare
+# Nota finala: 9
+Nota test: 10
+Nota proiect: 8
